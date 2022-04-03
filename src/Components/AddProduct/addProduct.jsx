@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Alert, Button, Col, Container, Form, Row } from 'react-bootstrap'
 import {getDownloadURL, ref,uploadBytesResumable} from 'firebase/storage'
 import { storage } from '../../Firebase';
@@ -16,9 +16,11 @@ export default function AddProduct() {
     const [image,setImage] = useState(null);
     const handleFile = (e)=>{
         if(e.target.files[0]){
+            console.log(e.target.files[0].size)
             setImage(e.target.files[0])
         }
     };
+
     const uploadImage = async(file)=>{
         if(!file)
         return;
@@ -42,7 +44,8 @@ export default function AddProduct() {
             productPrice,
             productQuantity,
             productCompany,
-            productImgUrl:url
+            productImgUrl:url,
+            productComments:[]
         }
         await ProductServices.addProduct(addedProduct)
         setIsAdded(true)

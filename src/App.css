@@ -1,1 +1,47 @@
-
+li{
+    list-style: none;
+    list-style-type: none;
+}
+*{
+    color: white;
+}
+body{
+    background-color: rgb(26, 26, 26) !important;
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.021) !important;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.322);
+    border-radius: 10px;
+}
+/* .comments::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 3px;
+    height: 30%;
+    margin-right: 20px;
+} */
+.comments{
+    border-left: 2px solid white;
+}
+.comment{
+    background-color: transparent !important;
+}
+.comment:hover{
+    background-color: rgba(255, 255, 255, 0.048)  !important;
+}
+.category{
+    background-color: rgba(255, 255, 255, 0.048);
+    padding: 4px 8px;
+    border-radius: 7px;
+    transition: .3s ease all;
+    margin-left: 13px;
+}
+.category:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(26, 26, 26);
+    cursor: pointer;
+}
+.loading{
+    color: white;
+}
